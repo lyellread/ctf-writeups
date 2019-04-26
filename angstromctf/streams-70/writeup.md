@@ -2,7 +2,7 @@
 
 ### Prompt
 
-White noise is useful whether you are trying to sleep, relaxing, or concentrating on writing papers. Find some natural white noise [here] (https://streams.2019.chall.actf.co/).
+White noise is useful whether you are trying to sleep, relaxing, or concentrating on writing papers. Find some natural white noise [here](https://streams.2019.chall.actf.co/).
 
 Note: The flag is all lowercase and follows the standard format (e.g. actf{example_flag})
 
@@ -15,10 +15,12 @@ Hint: Are you sure that's an mp4 file? What's inside the file?
 First, we deduced some information about the challenge by reading the description. "The flag is all lowercase" implies that we will be constructing it letter by letter, possibly from audio. First thing to check out is the video on the linked website - just river sounds. 
 
 We then proceeded to inspect the website - the HTML looks pretty standard, and I decided to leave player.js alone and come back to it if we failed to find a solution (would be more of a web challenge at that point). Under the 'Network' tab, we see that there appear to be two streams:
-	
-	chunk-stream0-0000*.m4s chunks initiated by init-stream0.m4s
-	chunk-stream1-0000*.m4s chunks initiated by init-stream1.m4s
-	
+```
+chunk-stream0-0000*.m4s chunks initiated by init-stream0.m4s
+chunk-stream1-0000*.m4s chunks initiated by init-stream1.m4s
+```
+~[Image](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf/streams-70/network-inspection.JPG)
+
 In addition there are two attempts to get a file called stream.mp4 (one that has a status of 206 - partial content, and one 200 - complete)... interesting. We got the file uwing the "Request URL":
 ```bash
 $wget https://streams.2019.chall.actf.co/video/stream.mp4
@@ -78,8 +80,8 @@ That file plays the video of the brook that is on the site! Now onto grabbing th
 
 ...and because we know naming conventions, we can guess that those files will be called:
 
-	- `init-stream2.m4s`
-	- `chunk-stream2-0000x.m4s` | `x` in 1..n
+	- init-stream2.m4s
+	- chunk-stream2-0000x.m4s | x in 1..n
 	
 Lets go try to grab that init file:
 ```bash
@@ -115,15 +117,15 @@ $cat init-stream2.m4s $(ls -vx chunk-stream2-*.m4s) > stream2.mp4
 ```	
 Listening to this file makes it obvious that morse code is at play, so off to the [online audio file to text (via morse) converter]( https://morsecode.scphillips.com/labs/audio-decoder-adaptive/). There we upload the mp4, and get this result:
 ```
-	ACTF<KN>F#45H-15-B34D-10N9-11V3-M#39-D45H)
+ACTF<KN>F#45H-15-B34D-10N9-11V3-M#39-D45H)
 ```
 Well that looks ok... but what are those '#'? running it again cleans some of this up:
 ```
-	ACTF<KN>F145H-15-B34D-10N9-11V3-MP39-D45H)
+ACTF<KN>F145H-15-B34D-10N9-11V3-MP39-D45H)
 ```
 Let's try to understand what it is saying. "flash is bead long live mpeg-dash". They likely meant 'dead' not 'bead' so let's fix that and give that flag a try:
 ```
-	actf{f145h_15_d34d_10n9_11v3_mp39_d45h}
+actf{f145h_15_d34d_10n9_11v3_mp39_d45h}
 ```
 Nice!
 
