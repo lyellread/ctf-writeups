@@ -2,7 +2,7 @@
 
 ### Solution
 
-The only file given is a GIF image, named [`redacted-puzzle.gif`](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/redacted-puzzle.gif). We must first inspect it:
+The only file given is a GIF image, named [`redacted-puzzle.gif`](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/redacted-puzzle.gif). We must first inspect it:
 
 ```bash
 $ exiftool redacted-puzzle.gif
@@ -33,7 +33,7 @@ Megapixels                      : 0.922
 
 OK. We know that this is likely a GIF with 35 frames. Let's try opening it:
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/open-in-image-viewer.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/open-in-image-viewer.JPG)
 
 Let's gather some more information about this GIF:
 
@@ -54,33 +54,33 @@ $identify -verbose redacted-puzzle.gif
 
 That is a bit of a weird color map... Those should correspond with different colors. Let's open this image in [gimp](https://www.gimp.org/). We use the `Open as Layers` option to get each frame as an individual layer.
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/layers.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/layers.JPG)
 
 Much layers. Next, we gotta fix that color mapping issue. `Colors>Map>Set Color Map` and choose `Pallete>Ega`:
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/map_1.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/map_1.JPG)
 
 Well, we know what the flag's alphabet will be. Then, after looking at each slide . . . 
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/c2a_1.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/c2a_1.JPG)
 
 We determined it best to remove the black backgrounds on each. One by one.
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/c2a_2.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/c2a_2.JPG)
 
 Now we can see them all overlapping. They form some sort of circle:
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/all_transparent.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/all_transparent.JPG)
 
 Let's examine only a couple...
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/octagon_2.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/octagon_2.JPG)
 
 That is intresting. Going off a hunch, we decided to build sets of binary digits representing if the vertex of a frame was where one of the verticies of the overall 'octagon', using dots in the background:
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/dots.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/dots.JPG)
 
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/example_binary.JPG)
+![Image](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/example_binary.JPG)
 
 As we repeated that for each layer, the shapes' verticies started to 'rotate', or 'drift' (thus why when all overlayed, they formed a circle, not octagon). We decided to track the movment and adjust the background dots. We generated the 'bytes':
 
@@ -110,7 +110,7 @@ cintuplets = ['10001', '10001', '10001', '11110', '01000', '10001', '10100', '00
 
 Those first couple convert to be 17 in decimal. Coincidentally, at index 17 of our alphabet is the letter 'O'. 
 
-Note that in [redacted-puzzle-solve.py](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/redacted-puzzle-solve.py) we exclude the location that you started forming the bits for each byte of `verticies` from on the octagon.
+Note that in [redacted-puzzle-solve.py](https://github.com/lyellread/ctf-writeups/blob/master/defcon-qualifiers-2019/redacted-puzzle-writeup/redacted-puzzle-solve.py) we exclude the location that you started forming the bits for each byte of `verticies` from on the octagon.
 
 ```
 OOO{FORCES-GOVERN+TUBE+FRUIT_GROUP=FALLREMEMBER_WEATHER}

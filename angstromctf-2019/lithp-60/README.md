@@ -2,7 +2,7 @@
 
 ### Prompt 
 
-My friend gave me [this](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf/lithp-60/lithp.lisp) program but I couldn't understand what he was saying - what was he trying to tell me?
+My friend gave me [this](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf-2019/lithp-60/lithp.lisp) program but I couldn't understand what he was saying - what was he trying to tell me?
 
 Author: fireholder
 
@@ -77,7 +77,7 @@ for x in decoded:
 
 print (''.join(solved))					#print that flag
 ```	
-These two scrips together make up [decode_lithp.py](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf/lithp-60/decode_lithp.py).
+These two scrips together make up [decode_lithp.py](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf-2019/lithp-60/decode_lithp.py).
 ```
 $python3 ./undo_encrypt.py
 actf{help_me_I_have_a_lithp}
