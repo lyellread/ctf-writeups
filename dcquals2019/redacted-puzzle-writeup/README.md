@@ -76,7 +76,7 @@ Let's examine only a couple...
 
 ![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/octagon_2.JPG)
 
-that is intresting. Going off a hunch, we decided to build sets of binary digits representing if the vertex of a frame was where one of the verticies of the overall 'octagon', using dots in the background:
+That is intresting. Going off a hunch, we decided to build sets of binary digits representing if the vertex of a frame was where one of the verticies of the overall 'octagon', using dots in the background:
 
 ![Image](https://github.com/lyellread/ctf-writeups/blob/master/dcquals2019/redacted-puzzle-writeup/dots.JPG)
 
