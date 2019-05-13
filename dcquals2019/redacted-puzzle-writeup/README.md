@@ -38,7 +38,7 @@ OK. We know that this is likely a GIF with 35 frames. Let's try opening it:
 Let's gather some more information about this GIF:
 
 ```bash
-lread@darkstar:~/projects/temp/dcquals/GIFidentify -verbose redacted-puzzle.gif
+$identify -verbose redacted-puzzle.gif
 
  . . .
 
