@@ -2,7 +2,7 @@
 
 ### Prompt 
 
-My friend gave me [this](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf-2019/lithp-60/lithp.lisp) program but I couldn't understand what he was saying - what was he trying to tell me?
+My friend gave me [this](lithp.lisp) program but I couldn't understand what he was saying - what was he trying to tell me?
 
 Author: fireholder
 
