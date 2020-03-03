@@ -19,7 +19,7 @@ We then proceeded to inspect the website - the HTML looks pretty standard, and I
 chunk-stream0-0000*.m4s chunks initiated by init-stream0.m4s
 chunk-stream1-0000*.m4s chunks initiated by init-stream1.m4s
 ```
-![Image](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf-2019/streams-70/network-inspection.JPG)
+![Image](network-inspection.JPG)
 
 In addition there are two attempts to get a file called stream.mp4 (one that has a status of 206 - partial content, and one 200 - complete)... interesting. We got the file uwing the "Request URL":
 ```bash
