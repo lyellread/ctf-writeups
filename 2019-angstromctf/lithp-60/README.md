@@ -77,7 +77,7 @@ for x in decoded:
 
 print (''.join(solved))					#print that flag
 ```	
-These two scrips together make up [decode_lithp.py](https://github.com/lyellread/ctf-writeups/blob/master/angstromctf-2019/lithp-60/decode_lithp.py).
+These two scrips together make up [decode_lithp.py](decode_lithp.py).
 ```
 $python3 ./undo_encrypt.py
 actf{help_me_I_have_a_lithp}
