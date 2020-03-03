@@ -68,6 +68,12 @@ shares = ["shamir_stack_smashing_detected",
 
 Now on to the crypto part. A dive into the textbook indicates that we need to find a polynomial that has points 'at the shares' (both the found ones and the given ones) and the value of f(0) where f is the function of that polynomial will be the flag. Neither of us are crypto wizards, so this rudimentary understanding will have to get us through :)
 
-We noticed that in [shamir.sage](2020-damctf/shamir-scavenger-hunt-300/shamir.sage)
+We noticed that in [shamir.sage](2020-damctf/shamir-scavenger-hunt-300/shamir.sage), we have the following functions:
+
+ - `find_password_points()`: This takes a list of passwords and turns them into a list of points. Passwords is the word that we adopted to refer to the shares we found, as opposed to those that were given to us in [shares.txt](2020-damctf/shamir-scavenger-hunt-300/shares.txt)
+ - `share()`: Generates shares based on the secret (f(0), the flag)
+ - `reconstruct()`: This incomplete function will need to be retrofitted to essentially 'curve fit' (i.e. find the equation of the polynomial that goes through all shares and passwords)
+
+ To reconstruct this, we will use the 
 
 ~Lyell Read, Phillip Mestas
