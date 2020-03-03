@@ -74,6 +74,12 @@ We noticed that in [shamir.sage](2020-damctf/shamir-scavenger-hunt-300/shamir.sa
  - `share()`: Generates shares based on the secret (f(0), the flag)
  - `reconstruct()`: This incomplete function will need to be retrofitted to essentially 'curve fit' (i.e. find the equation of the polynomial that goes through all shares and passwords)
 
- To reconstruct this, we will use the 
+To reconstruct this, we will use the `find_password_points()` function to turn our passwords that we collected into the share format, and then use the `Rx.lagrange_polynomial()` (see comment in [shamir.sage](2020-damctf/shamir-scavenger-hunt-300/shamir.sage)) function to get a polynomial function that reaches all the points in the dataset of shares + passwords that we have. Then we compute `poly(0)` to get the flag value. 
+
+Our solution is in [solve.sage](2020-damctf/shamir-scavenger-hunt-300/solve.sage).
+
+This results in the point at `0x64616d7b5368686868686172696e675f69535f63415231696e677d` which [converts to](http://string-functions.com/hex-string.aspx) string `dam{Shhhhharing_iS_cAR1ing}`. 
+
+Thanks Athos and PugofStardoc!!
 
 ~Lyell Read, Phillip Mestas
