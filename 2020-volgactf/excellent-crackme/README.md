@@ -13,13 +13,13 @@ An excel challenge - that's a first for us! Let's crack that file open. We used 
 
 Firstly, let's look at the spreadsheet:
 
-[!Image](sheet.png)
+![Iage](sheet.png)
 
 Nice colors. We see an entry box, and what looks like a submit box. The first thing we did was select all cells, and change text color to not yellow, on a hunch that there is hidden text or data somewhere in the sheet. There is, though we did not find it at first.
 
 Under `Tools` > `Macros` > `Edit Macros`, we can see the following:
 
-[!Image](macros.png)
+![Iage](macros.png)
 
 This looks like slightly obfuscated VPA (Visual Basic for Applications). On further inspection, it appears that everything listed under `Module1` is the same file, just different functions. Therefore, we extract `VolgaCTF` into [VolgaCTFRaw.bas](VolgaCTFRaw.bas). 
 
@@ -52,7 +52,7 @@ End Sub
 
 This can be better understood with [VBScript syntax highlighting](https://github.com/SublimeText/VBScript):
 
-[!Image](volgactf.png])
+![Iage](volgactf.png])
 
 Firstly, some local variables are defined (`long_1`, `long_2`, `long_3`). Then `string_1` is set to the `Range()` of `Chr(76) & Chr(&H31) & Chr(Int("53"))`. This becomes `Range("L" & "1" & "5")` (note that `&H31` == `0x31` and elsewhere, the `&` operator is concatenation). Therefore, this becomes `Range(L15)` - this is where the text is entered in the Excel sheet, so `string_1` is the user input.
 
@@ -62,7 +62,7 @@ Therefore, the outer loop iterates over the length of user input. We then identi
 
 `long_3` is set by `long_3 = CLng(Cells(99 + idx_outer, 99 + Len(string_1) + 1).Value)` which takes the value of cell `99 + idx_outer, 99 + Len(string_1) + 1`. Knowing this, we looked at what data is in the sheet around 100,100:
 
-[!Image](data.png)
+![Iage](data.png)
 
 The last column is the 'vector' while the rest is the 'matrix'. The code is essentially taking the dot product of the two. We can undo the operations done, and get the ascii value of the characters of the flag by performing `matrix\vector` in `sage`. [Here is the sage script](excellent-crackme-solve.sage).
 

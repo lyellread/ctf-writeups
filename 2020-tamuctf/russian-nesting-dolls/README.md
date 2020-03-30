@@ -95,7 +95,7 @@ This extraction creates a bunch of weird files:
 
 Funky! Let's see what these are. They are each about 156K large (they seem to have 157696 characers each), and all contain data that looks like more base64 data. To make sense of these, we put them into [CyberChef](https://gchq.github.io/CyberChef/), and looked for any indication of what these were. Of all of them, we identified that [........encoded](........encoded) starts with [jpeg magic bytes](https://www.ntfs.com/jpeg-signature-format.htm). [Cyber Chef Link](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)To_Hexdump(16,false,false)&input=YWFhYS85ai80QUFRU2taSlJnQUJBZ0FBWkFCa0FBRC83QUFSUkhWamEza0FBUUFFQUFBQVBBQUEvKzRBSmtGa2IySmxBR1RBQUFBQUFRTUEKRlFRREJnb05BQUE3TUFBQVJJb0FBSHY0QUFEbG52L2JBSVFBQmdRRUJBVUVCZ1VGQmdrR0JRWUpDd2dHQmdnTERBb0tDd29LREJBTQpEQXdNREF3UURBNFBFQThPREJNVEZCUVRFeHdiR3hzY0h4OGZIeDhmSHg4Zkh3RUhCd2NOREEwWUVCQVlHaFVSRlJvZkh4OGZIeDhmCkh4OGZIeDhmSHg4Zkh4OGZIeDhmSHg4Zkh4OGZIeDhmSHg4Zkh4OGZIeDhmSHg4Zkh4OGZIeDhmLzhJQUVRZ0Nsd09OQXdFUkFBSVIKQVFNUkFmL0VBTlVBQVFFQkFRRUJBUUVBQUFBQUFBQUFBQUFCQXdJRUJRWUhBUUVCQVFFQkFRRUFBQUFBQUFBQUFBQUFBUUlEQkFVRwpFQUFCQXdJRkJBTUJBQU1BQXdFQkFBQUJBQkVDRUFNZ01FQWhFbEJnTVFSQkloTXlJeFFGY0RNa1FoVVJBQUVDQXdVRkJnVUNCUVFECkFBQUFBQUVBRVNFeEFoQWdRVkVTUUdGeElnTXdVR0NCa1RLeHdVSlNFNkhSY09GaWdpT0Fjak5Ua3VJa0VnRUFBQUFBQUFBQUFBQUEKQUFBQUFBRFFFd0VBQWdFREF3UUJBd1VCQVFBQUFBQUJBQkVoRURGQklGRmhNRUJ4Z1pHaHNjRlFZUERSNGZGdy85b0FEQU1CQUFJUgpBeEVBQUFINFA2TDg2cEVxd0ZJQVVCUWdGQUFRdFFBQ2doU0FvUUZBUXFBaWdVZ0tnc0VMSTgvRDBaZWYwZFIzR2g2ODNVOG01ejI0CmRlcnpCU0FBc0JSQlFMQUFVZ0FLaUFBQUFxS0lBQUFvZ0lvRlFJVWdBVUNnUUNnQUpRQUNoQlJBVkJGRklFdGdBS1FFQ2lvQkpRRVkKOGUySG05SFMyTjQwVGZPclo1TjU3OXZqdThGRUFLQUVCUUFCQ2dBRUFvQUFBQXNBQUlVRWdvZ3BDa1VVQUNBVUFBQUFxQ2dBQkFDawpvSW9JVUNvSUJGQXFTZ0VvQkpjODc4WGo5blV2Y21zZExzbm96ZlB1YzkrRjlQblVBQVFBb0pTQlFFS0lsVkFBQUJRUUFGQ0toU0JLCkxBUUhTSVVFQlZoU0FvQUVMVUFGSVVBQUZTQUZFQ2tBQUFBQUFBQUlKWkhpOGZ1bWRkeDBuUnBHMGVxWHc5Y1BiNUdvQUJVQUFBQUE). We convert this to a jpeg using an [online tool](https://onlinejpgtools.com/convert-base64-to-jpg), and get [8dot_out.jpg](8dot_out.jpg):
 
-[!Image](8dot_out.jpg)
+![Image](8dot_out.jpg)
 
 That may look like a shark, but it's actually a nesting doll (what do you know!). I use [stegsolve](https://github.com/zardus/ctf-tools/tree/master/stegsolve) to examine the image. In stegsolve, under `Analyze` > `File Format` (which you know has something interesting when stegsolve hangs for a second when opening), we can see that, indeed, there's quite a bit here:
 
@@ -108,7 +108,7 @@ Dump of additional bytes: Hex:
 
 `89` `50` `4e` ... That looks like PNG [Magiv Bytes](https://asecuritysite.com/forensics/magic) :). We need to chop the PNG off the end of this JPG, we do that using [extract_png.py](extract_png.py), and we get [out.png](out.png).
 
-[!Image](out.png)
+![Image](out.png)
 
 ```
 gigem{dont_you_just_love_a_good_pcap?}
