@@ -39,7 +39,7 @@ Someone had a plugin enabled that saw there was a hidden channel on the Discord,
 
 Now onto that hint: The challenge name is "Against the Perfect discord Inquisitor" - that makes acronym "API"... I know where this is going. We need to make some API request to get some information.
 
-After quite a bit of looking (Discord, your docs suck big time!!), we came up with [this script] which will make a `GET` request to the API. We needed a token, too, and thankfully, GitHub user Tyrrrz provides [this guide](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs) to getting tokens and channel (and message and guild) ID's. Now we can work with that. We tried:
+After quite a bit of looking (Discord, your docs suck big time!!), we came up with [this script](discord_bot.py) which will make a `GET` request to the API. We needed a token, too, and thankfully, GitHub user Tyrrrz provides [this guide](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs) to getting tokens and channel (and message and guild) ID's. Now we can work with that. We tried:
 - `/api/v6/channel/688190172793536545/messages`: returns all the messages - nothing new, as we can read all messages in that channel.
 - `/api/v6/channel/688190289814618213/messages`: returns not authorized to view messages in hidden channel - no suprise there.
 - `/api/v6/guilds/688190172793536536`: returns much of what we already knew about this guild
