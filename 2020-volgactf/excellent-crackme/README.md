@@ -52,7 +52,7 @@ End Sub
 
 This can be better understood with [VBScript syntax highlighting](https://github.com/SublimeText/VBScript):
 
-![Image](volgactf.png])
+![Image](volgactf.png)
 
 Firstly, some local variables are defined (`long_1`, `long_2`, `long_3`). Then `string_1` is set to the `Range()` of `Chr(76) & Chr(&H31) & Chr(Int("53"))`. This becomes `Range("L" & "1" & "5")` (note that `&H31` == `0x31` and elsewhere, the `&` operator is concatenation). Therefore, this becomes `Range(L15)` - this is where the text is entered in the Excel sheet, so `string_1` is the user input.
 
