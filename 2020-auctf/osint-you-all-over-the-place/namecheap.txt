@@ -1,0 +1,62 @@
+devs-r-us.xyz
+Domain name: devs-r-us.xyz
+Registry Domain ID: D178588099-CNIC
+Registrar WHOIS Server: whois.namecheap.com
+Registrar URL: http://www.namecheap.com
+Updated Date: 0001-01-01T00:00:00.00Z
+Creation Date: 2020-03-12T23:19:18.00Z
+Registrar Registration Expiration Date: 2021-03-12T23:19:18.00Z
+Registrar: NAMECHEAP INC
+Registrar IANA ID: 1068
+Registrar Abuse Contact Email: abuse@namecheap.com
+Registrar Abuse Contact Phone: +1.6613102107
+Reseller: NAMECHEAP INC
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited 
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited 
+Domain Status: addPeriod https://icann.org/epp#addPeriod 
+Registry Registrant ID: 
+Registrant Name: web admin
+Registrant Organization: 
+Registrant Street: Philly 
+Registrant City: Philly
+Registrant State/Province: PA
+Registrant Postal Code: 19099
+Registrant Country: US
+Registrant Phone: +1.3343844504
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: shannonengrid@gmail.com
+Registry Admin ID: 
+Admin Name: web admin
+Admin Organization: 
+Admin Street: Philly 
+Admin City: Philly
+Admin State/Province: PA
+Admin Postal Code: 19099
+Admin Country: US
+Admin Phone: +1.334384450
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: admin@devs-r-us.com
+Registry Tech ID: 
+Tech Name: web admin
+Tech Organization: 
+Tech Street: Philly 
+Tech City: Philly
+Tech State/Province: PA
+Tech Postal Code: 19099
+Tech Country: US
+Tech Phone: +1.334384450
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: admin@devs-r-us.com
+Name Server: dns1.registrar-servers.com 
+Name Server: dns2.registrar-servers.com 
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2020-04-05T20:11:21.15Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp

@@ -1,5 +1,7 @@
 # Who Made Me
 
+950 points
+
 ### Prompt
 
 > One of the developers of this CTF worked really hard on this challenge.

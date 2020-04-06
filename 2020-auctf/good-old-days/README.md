@@ -1,5 +1,7 @@
 # Good Old Days
 
+877 points
+
 ### Prompt
 
 > This site used to look a lot cooler.

@@ -1,5 +1,7 @@
 # ALIedAS About Some Thing
 
+903 points
+
 ### Prompt
 
 > See what you can find.
