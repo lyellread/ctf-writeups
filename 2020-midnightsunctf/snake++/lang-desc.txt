@@ -1,0 +1,153 @@
+Registers and memory
+--------------------
+
+Snake++ operates on 8 registers and 3 memory areas.  We distinguish between
+text and numbers. 
+
+There are 4 registers than can hold text, named: apple, banana, cherry and
+date.  There are 4 registers that can hold numbers, named: red, green, blue and
+yellow.
+
+All 3 memory areas are 30 by 20 cells in size (just like the map of the world).
+There is one RW memory area for text (TEXTRAM), and one for numbers (NUMRAM).
+There is also one readonly memory area for text (TEXTROM).
+
+Comments
+--------
+
+Any line starting with the '#' character is ignored.
+
+Loading, storing and assigning
+------------------------------
+
+The following operators allow loading from and storing into memory:
+
+Loading from RAM: <register> ~<8~~~ <x> <y>;
+Storing into RAM: <register> ~~~8>~ <x> <y>;
+Loading from ROM: <register> ~<8=== <x> <y>;
+
+Note that there is no operator to store into ROM.  The memory area is
+automatically selected based on the register and the operator.  For instance,
+to load a number from NUMRAM row 7, column 5 into the blue register:
+
+        blue ~<8~~~ 5 7;
+
+Likewise, to store a text from the apple register into TEXTRAM row 0, column
+12:
+
+        apple ~~~8>~ 12 0;
+
+Finally, since there is only ROM for text data:
+
+        banana ~<8=== 5 6;
+
+Values can also be assigned to registers using the := operator:
+
+        blue := 5;
+        cherry := "abc";
+
+Arithmetic
+----------
+
+The following arithmetic operations are defined on numbers: + - / *
+And for text, only + is defined.
+Formulas can be enclosed in parentheses.
+
+e.g.:
+        blue ~<8~~~ (red+6) (green/2);
+        red := blue + green * 2;
+        banana := cherry + "x" + date;
+
+Statements
+----------
+
+A program in Snake++ consists of a sequence of statements, each ending with a
+semicolon.  Each of the load, store and assignment operations described above
+are statements.  There are also statements for logging numbers and text (log
+and logText respectively), returning a value to the game, if-then-else
+branching and sliding to a label.
+
+Logging Statements
+------------------
+
+to log the value of the blue register + 3:
+
+        log blue+3;
+
+to log the banana text register:
+
+        logText banana;
+
+Return Statement
+----------------
+
+Returning a text value will end the Snake++ program and hand control back to
+the Snake game in progress.  The returned value can be used to control the
+snake, and should be "", " ", "L" or "R". (See game instructions).  Only text
+values can be returned.
+
+example:
+        return "R";
+
+
+If-Then-Else Statement
+----------------------
+
+Works as you'd expect:
+
+if <condition> then <sequence of statements> fi;
+if <condition> then <sequence of statements> else <sequence of statements> fi;
+
+Of note is the condition. It is possible to compare numbers to numbers, or text
+to text.
+
+For numbers, the operators are: ==, <>, >, >=, <, <=
+For text, the operators are: == and <>
+In each case, <> means "does not equal".
+
+Example:
+
+        if blue < yellow-3 then 
+                logText "Looking good"; 
+        else 
+                logText "This is not good";
+                blue := yellow - 3;
+        fi;
+
+
+Labels and Slide Statement
+--------------------------
+
+It is possible to label a statement by placing a label in front of it.
+Labels are sequences of characters enclosed with curly braces.
+For instance, the following statement is labeled {example}:
+        {example} blue := 5;
+
+During execution, it is possible to slide over from the current statement to
+another labeled statement.
+
+Example:
+
+        green := 0;
+        {loop}
+                green := green + 1;
+                if green < 10 then
+                        log green;
+                        slide {loop};
+                fi;
+
+Caution: it is only possible to slide to a labeled statement in the same or the
+encompassing codeblock.
+
+Program execution
+-----------------
+
+The execution environment for your Snake++ program is kept alive during the
+entire game.  Before the game moves the snake, it will execute your (entire)
+Snake++ program to determine what to do.  You should use the return statement
+to return one of "", " ", "R" or "L".
+
+For each execution of your program, only the TEXTROM and registers will be
+altered.  TEXTROM will contain the worldmap, as also seen when playing the game
+as a human.  All registers are wiped. The coordinates of the head of the snake
+are placed in the blue (X-coordinate) and yellow (Y-coordinate) registers.
