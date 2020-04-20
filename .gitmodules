@@ -1,3 +1,6 @@
 [submodule "2020-plaidctf/dangit/GitTools"]
 	path = 2020-plaidctf/dangit/GitTools
 	url = https://github.com/internetwache/GitTools/
+[submodule "2020-plaidctf/dangit/git-repo-dump"]
+        path = 2020-plaidctf/dangit/git-repo-dump
+
