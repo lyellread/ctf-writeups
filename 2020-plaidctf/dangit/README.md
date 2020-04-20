@@ -50,6 +50,10 @@ Therefore, we need to pull those refs down too when we pull the repository. To d
 +    QUEUE+=('/refs/wip/wtree/refs/heads/master')
 ```
 
-Then, we re-run both the GitTools Dumper and Extractor, and look through all extracted commits' files. 
+Then, we re-run both the GitTools Dumper and Extractor, and look through all extracted commits' files. One commit `6f209fdc52c0ec6feedff16024d5b85ef96cb38c` (that was not present before) contains log file:
 
 ```
+PCTF{looks_like_you_found_out_about_the_wip_ref_which_magit_in_emacs_uses}
+```
+
+~Lyell Read, Phillip Mestas, Yeongjin Jang, Zander Work, Andrew Quach
