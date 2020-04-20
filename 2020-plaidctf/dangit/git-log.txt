@@ -1,0 +1,157 @@
+commit 2c66d164f4008c9b6d2dce7f3ee998042f7a7c7d
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:16 2019 +0000
+
+    finished problem
+
+diff --git a/log b/log
+index 6d07550..ad4d2db 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Oooh more stuff I found on github!
++Pushed problem to server
+
+commit 432edd2aca6787c882fa2ea3edf3f1c5e224c81e
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:16 2019 +0000
+
+    ooh shiny
+
+diff --git a/log b/log
+index 5c1baed..6d07550 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Hmm looks like this piece of software lets me script stuff up
++Oooh more stuff I found on github!
+
+commit fffc3436fdc898c0bbff7e134c64ddcac4d4d7b8
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:16 2019 +0000
+
+    progress
+
+diff --git a/log b/log
+index f4ad53f..5c1baed 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Now how the hell do I implement this
++Hmm looks like this piece of software lets me script stuff up
+
+commit 4f863231bf62ae8e337df2cdb73832b8c9842011
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:16 2019 +0000
+
+    figuring shit out
+
+diff --git a/log b/log
+index 95aaaf3..f4ad53f 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Decided flag! I have an idea for the problem!
++Now how the hell do I implement this
+
+commit c754ac17f47495e396913993ff48fd10eb70723e
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:16 2019 +0000
+
+    yay
+
+diff --git a/log b/log
+index 1d15ded..95aaaf3 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Maybe I should pick a flag first?
++Decided flag! I have an idea for the problem!
+
+commit 6c5d9264a4f05e2b7d753beda8d40f2f69a714c3
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:14 2019 +0000
+
+    thoughts
+
+diff --git a/log b/log
+index 2f4ba64..1d15ded 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-What the hell I should at least pick a thing to work on
++Maybe I should pick a flag first?
+
+commit d90016c0a550394b2051d65a817f1e658aa65892
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:14 2019 +0000
+
+    im out of ideas
+
+diff --git a/log b/log
+index 9b8d633..2f4ba64 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Hmm, I should _really_ get this done soon
++What the hell I should at least pick a thing to work on
+
+commit f9c6bf17ec7eb376fb50ebac935328623aedb0cc
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:14 2019 +0000
+
+    More
+
+diff --git a/log b/log
+index b704500..9b8d633 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-Huh, no idea what to make for this challenge
++Hmm, I should _really_ get this done soon
+
+commit e9110f8730ae517674dcc09651eb570aae7de549
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:14 2019 +0000
+
+    lost
+
+diff --git a/log b/log
+index 7e3c4e0..b704500 100644
+--- a/log
++++ b/log
+@@ -1 +1 @@
+-TODO: Make challenge
++Huh, no idea what to make for this challenge
+
+commit a57903d406eeb9e7b7d0095bf4534be15322929f
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:14 2019 +0000
+
+    initial commit
+
+diff --git a/log b/log
+new file mode 100644
+index 0000000..7e3c4e0
+--- /dev/null
++++ b/log
+@@ -0,0 +1 @@
++TODO: Make challenge
+
+commit 7e126c5c6151f8dd36abda39f0d7cd13fdb4646f
+Author: Nobody <nonexistent@f0xtr0t.com>
+Date:   Sat Apr 13 23:04:14 2019 +0000
+
+    start
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..da9417f
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,5 @@
++<html>
++<body>
++<a href='log'>Latest log</a>
++</body>
++</html>
