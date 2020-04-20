@@ -2,3 +2,6 @@
 	path = 2020-plaidctf/dangit/GitTools
 	url = https://github.com/internetwache/GitTools/
 
+[submodule "2020-plaidctf/dangit/GitTools-Magit"]
+	path = 2020-plaidctf/dangit/GitTools-Magit
+	url = git@github.com:osusec/GitTools.git
