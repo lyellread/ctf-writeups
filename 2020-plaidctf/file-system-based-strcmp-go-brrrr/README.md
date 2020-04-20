@@ -1,46 +1,29 @@
-# Dangit Retrospective Writeup - 100pts
+# File System Based Strcmp Go Brrr - 150pts
 
 ## Prompt
 
-> While many fine clients exist, only two deserve to be called [porcelains](http://dangit.pwni.ng/)
+> strcmp go brrrr
+
+Files: [strcmp.tar.gz](strcmp.tar.gz)
 
 ## Solution
 
-On first examination, the site provided appears to allow the user to download the latest log from a link. This log is located at http://dangit.pwni.ng/log. Combined with the fact that this challenge is called dan***git*** and that this is the "latest" log, we check that the root directory of the site contains a `.git` folder: 
+This challenge revolved around [a fat32 file system image](strcmp.fat32). After mounting the image we saw an endless tree of recursive directories full of the alphabet and some other characters. Each directory contained an empty file with a name indicating that you had not found the flag, such as `TROLOL` or `NOFLAG4U`.
 
-```bash
-$ wget http://dangit.pwni.ng/.git/config
-$ cat config
-[core]
-    repositoryformatversion = 0
-    filemode = true
-    bare = false
-    logallrefupdates = true
-[user]
-    email = nonexistent@f0xtr0t.com
-    name = Nobody
+We quickly guessed that the directory structure was a file system based trie and that the flag would then be a path through the filesystem, likely to a zero byte file with a congradulatory name. Looking through a strings dump of the filesystem we saw that the file we were looking for was called `MATCH`. Unfortunately the file system recursed extremely deep so any effort to find the flag with a basic find command failed. 
+
+Finally we discovered that there were many more directories in the fs than were possible given its size. This meant that the directories were likely hard linked. After making this discovery we edited our find script to track and ignore directories with inode values that we had already visited.
+
+We then used [a python script](solve.py) to find our flag in the directory 
+
+```
+SPACE/SPACE/SPACE/!/SPACE/SPACE/SPACE/!/!/SPACE/SPACE/!/!/SPACE/!/SPACE/!/#/$/#/#/SPACE/#/%/$/#/!/!/#/!/$/%/#/#/#/$/%/&/'/$/%/$/%/%/#/$/&/(/%/&/&/&/)/$/'/'/(/)/&/'/(/%/&/'/$/(/)/'/&/-/-/(/-/)/'/0/0/(/%/-/1/1/)/0/-/'/1/2/&/3/$/(/(/%/)/0/)/0/'/-/2/1/-/1/3/)/(/2/)/3/&/4/4/2/2/5/4/6/'/5/6/7/3/4/-/(/0/5/1/8/6/2/3/4/)/-/3/7/4/5/0/0/0/8/5/1/9/1/9/6/6/7/8/2/2/5/9/@/-/3/7/@/7/@/4/8/8/9/6/7/3/5/0/8/6/A/1/A/9/@/9/2/7/4/A/8/5/A/B/6/B/B/@/1/@/C/2/3/3/D/9/A/C/7/A/@/4/B/C/D/B/C/5/E/B/D/D/A/E/6/E/4/B/F/5/G/E/7/F/G/8/9/F/8/G/@/6/9/C/A/@/F/C/7/G/B/H/H/H/I/D/J/C/I/I/8/A/C/D/J/H/K/D/D/9/E/F/L/E/B/F/K/E/L/G/@/G/I/H/E/C/I/J/M/K/N/J/A/L/F/O/G/J/F/D/H/G/E/K/H/I/H/P/SPACE/B/L/M/Q/I/J/M/K/N/F/K/C/R/L/M/I/S/J/O/K/L/G/H/M/I/M/N/N/L/N/N/O/M/J/J/P/SPACE/K/K/O/T/O/P/!/N/P/SPACE/L/L/D/P/SPACE/E/U/Q/O/Q/V/Q/R/S/R/P/!/S/W/Q/X/F/O/M/T/G/H/Y/P/SPACE/N/T/Q/M/I/R/R/S/U/U/R/Z/J/S/K/^/T/L/V/M/N/T/N/W/X/U/Y/Z/_/O/`/U/V/O/V/^/V/{/}/W/_/W/X/P/$/P/!/O/Y/W/`/}/S/Z/P/C/P/C/P/C/P/P/C/T/F/P/C/T/F/{/P/P/C/T/F/P/C/T/F/P/C/T/F/{/W/H/A/T/_/I/N/_/T/A/R/N/A/T/I/O/N/_/I/S/_/T/H/1/S/_/F/I/L/E/S/Y/S/T/E/M/!/}
 ```
 
-Looks like we got something. Next, we used [GitTools](https://github.com/internetwache/GitTools/) to pull down the repo. 
+This flag directory ends in `..../P/C/T/F/{/W/H/A/T/_/I/N/_/T/A/R/N/A/T/I/O/N/_/I/S/_/T/H/1/S/_/F/I/L/E/S/Y/S/T/E/M/!/}`, which contains our flag:
 
-```bash
-bash gitdumper.sh http://dangit.pwni.ng/.git/ ../git-repo-dump
+```
+PCTF{WHAT_IN_TARNATION_IS_TH1S_FILESYSTEM!}
 ```
 
-It finds a bunch of objects, logs, and whatnot. We use GitTools Extractor on it:
-
-```bash
-bash extractor.sh ../../git-repo-dump ../../git-repo-dump-extracted
-```
-
-Let's examine that further... `git log -p > ../git-log.txt` ([logs](git-log.txt)). Nothing important there, except a couple intriguing commits. It looks like each time, they replace the contents of `log` with somethings else... 
-
-We checked our work over a couple hours of manual work, but nothing at all showed up... Back to the prompt, then! 
-
-The prompt makes references to porcelains. Porcelains are the user-facing commands that git has, as opposed to the plumbing commands - those that are intended to be used by scripts and the like. We searched the entire clue, and came up with [Magit](https://magit.vc/) comes up, and it appears to be an emacs `git` client, so it fits the clue. After reading the docs, we determined that this was not the way to go.
-
-This is where we left the problem during the challenge. After the fact, based on [a writeup by null2root](https://ctftime.org/writeup/20046), we were in fact on the right path. oof. 
-
-Basically, we just needed to read the docs. They were using Magit with [wip modes](https://magit.vc/manual/magit/Wip-Modes.html) - these store some tracked items to a `wip` ref in refs as a backup in case changes are delteted that were not meant to be. Cool feature. 
-
-Therefore, we need to pull those refs down too when we pull the repository. To do that, I have 
+~ REK, Phillip Mestas, Lance Roy, Andrew Quach, Lyell Read
