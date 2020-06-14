@@ -12,7 +12,7 @@ I used the `namechk` tools from the [OSINT Framework Site](https://osintframewor
 
 `namechk` tells me that there are claimed usernames for the name `NahamConTron` for many sites, including Instagram. 
 
-[!Image](claimed.png)
+![Image](claimed.png)
 
 Checking out [the Instagram account](https://www.instagram.com/NahamConTron/), we get the flag.
 

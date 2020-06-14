@@ -12,7 +12,7 @@ I used the `namechk` tools from the [OSINT Framework Site](https://osintframewor
 
 `namechk` tells me that there are claimed usernames for the name `NahamConTron` for many sites:
 
-[!Image](claimed.png)
+![Image](claimed.png)
 
 Now that we have exhausted Instagram, I opened up all the other sites with claimed usernames for `NahamConTron` and systematically eliminated them. I ended up at the GitHub account owned by `NahamConTron`, and it included [a dotfiles repo](dotfiles). This in turn contains [a bash history file](dotfiles/.bash_history) that gives us the command that was run to access the server: 
 
