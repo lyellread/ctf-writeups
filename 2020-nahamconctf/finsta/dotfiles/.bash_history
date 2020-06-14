@@ -1,0 +1,1 @@
+ssh -i config/id_rsa nahamcontron@jh2i.com -p 50033

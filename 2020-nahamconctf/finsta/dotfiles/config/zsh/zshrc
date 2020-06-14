@@ -1,0 +1,73 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.dotfiles/config/zsh/ohmyzsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="spaceship"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(thefuck zsh-autosuggestions zui)
+plugins+=(zsh-syntax-highlighting)
+
+# Load Oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Setup custom ls alias
+#alias ls='ls --color=tty --group-directories-first'
+alias ls="exa -l --group-directories-first"
+alias yeet="git push"
+alias yoink="git pull"
+
+# Set path and editor selections
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+export EDITOR=`/usr/bin/which nvim`
+
+# virsh default connection is system not user!
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
+# Disable automatic `cd` on directory name
+unset AUTO_CD
+
+# Perl setup
+PATH="/home/caleb/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/caleb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/caleb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/caleb/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/caleb/perl5"; export PERL_MM_OPT;
+
+# Set TERM
+export TERM="screen-256color"
+
+# Make sure tmux uses 256 colors
+alias tmux="tmux -2"
+
+# Erase words on C+backspace
+bindkey '^H' backward-kill-word
+
+if [[ $DISPLAY ]]; then
+	# Run tmux if this is an GUI interactive shell
+	[[ $- != *i* ]] && return
+	[[ -z "$TMUX" ]] && exec tmux
+fi
+
+# Start X Windows if we are on the first tty
+if [ "$(tty)" = "/dev/tty1" ]; then
+	exec startx
+fi

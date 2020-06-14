@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+if [ "$#" -ne 1 ]; then
+	echo "usage: $0 (up|down)" >&2
+	exit 1
+elif [ "$1" != "up" ] && [ "$1" != "down" ]; then
+	echo "usage: $0 (up|down)" >&2
+	exit 1
+fi
+
+# Grab max, current, and step (10%) values
+BACKLIGHT=`echo /sys/class/backlight/**`
+MAX_VALUE=`cat $BACKLIGHT/max_brightness`
+CURRENT_VALUE=`cat $BACKLIGHT/brightness`
+STEP=$(( MAX_VALUE*10/100 ))
+ID=10000 # Notification ID
+
+# Increase or decrease and check bounds
+if [ "$1" = "up" ]; then
+	NEXT_VALUE=$(( CURRENT_VALUE+STEP ))
+	if [ "$NEXT_VALUE" -gt "$MAX_VALUE" ]; then
+		NEXT_VALUE=$MAX_VALUE
+	fi
+else
+	NEXT_VALUE=$(( CURRENT_VALUE-STEP ))
+	if [ "$NEXT_VALUE" -lt "0" ]; then
+		NEXT_VALUE=0
+	fi
+fi
+
+PERC_VALUE=$(( NEXT_VALUE*100/MAX_VALUE ))
+dunstify -a "Brightness" -u low -i "video-display" -r "$ID" \
+	"${PERC_VALUE}%" "$(~/.dotfiles/scripts/get-progress 10 "<b> </b>" " " $PERC_VALUE)" 
+
+# Write brightness
+echo "$NEXT_VALUE" > $BACKLIGHT/brightness 

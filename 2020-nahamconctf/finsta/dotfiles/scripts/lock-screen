@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+i3lockr --blur 25 -- --nofork --ignore-empty-password --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=0000ff55 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=ff000055 --insidewrongcolor=ff00001c --verifcolor=00000000 --wrongcolor=ff000000 --timecolor=00000000 --datecolor=00000000 --layoutcolor=00000000
+#i3lock -t -i "$HOME/Pictures/Wallpapers/lockscreen.jpg" --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c --verifcolor=00000000 --wrongcolor=ff000000 --timecolor=00000000 --datecolor=00000000 --layoutcolor=00000000
+
+

@@ -1,0 +1,2 @@
+rofi.theme: monokai.rasi
+rofi.modi: window,run,drun,combi 

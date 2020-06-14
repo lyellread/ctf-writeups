@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+prefix="" 
+
+vpn=`nmcli c show --active | grep "vpn" | sed -E 's|\s{2,}|/|g' | cut -d'/' -f1`
+
+if [ -z "$vpn" ]; then
+	echo ""
+	exit 0
+fi
+
+address=`nmcli c show "$vpn" | grep "IP4.ADDRESS\\[1\\]" | rev | cut -d' ' -f1 |
+	rev | sed 's/\/[0-9]*$//'`
+
+echo "$prefix $vpn ($address)"

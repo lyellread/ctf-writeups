@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+# Place to store the image temporarily
+tmpfile=`mktemp --suffix=".png"`
+
+# Otherwise i3 confuses import
+sleep 0.1
+
+# Save the file
+import "$tmpfile"
+
+# Ask where to put it permanently
+final_file=`zenity --file-selection --save --confirm-overwrite --file-filter='.png'`
+
+# Move the file
+mv "$tmpfile" "$final_file"

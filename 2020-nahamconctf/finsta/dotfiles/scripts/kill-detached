@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# Grab all un-attached tmux sessions that aren't my root session and kill them
+tmux ls | grep -v "(attached)" | cut -d':' -f1 | grep -v "caleb" | while read session; do
+	tmux kill-session -t $session
+done
+

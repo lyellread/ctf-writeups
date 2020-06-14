@@ -1,0 +1,9 @@
+! Disable control and caps lock
+clear lock
+clear control
+
+! Map Caps lock to left control
+keycode 66 = Control_L
+! Re-enable control
+add control = Control_L Control_R
+

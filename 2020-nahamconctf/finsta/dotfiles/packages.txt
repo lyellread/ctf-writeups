@@ -1,0 +1,15 @@
+xorg-apps
+i3-gaps
+i3lock-fancy-git
+dunst
+rofi
+picom
+tmux
+zsh
+neovim
+neovim-symlinks
+zsh-syntax-highlighting
+nerd-fonts-complete
+paper-icon-theme-git
+ttf-comfortaa
+scrot

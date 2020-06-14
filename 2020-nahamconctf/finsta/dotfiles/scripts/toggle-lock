@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+if pgrep xautolock >/dev/null; then
+	notify-send -u low "Autolock" "Disabling automatic lock"
+	pgrep xautolock | while read pid; do
+		kill $pid
+	done
+else
+	notify-send -u low "Autolock" "Enabling automatic lock"
+	nohup xautolock -time 5 -locker "$HOME/.dotfiles/scripts/lock-screen" >/dev/null 2>&1 &
+fi
