@@ -13,7 +13,7 @@ After [the second part of the git challenge saga](../docs), we have gotten a new
  - Issues filed to the `ekolabs` repo will be 'moved' to the `ekoparty-internal` repo. 
  - We control content in the submitted issues, and this is copied to the new issues in `ekoparty-internal` repo.
 
-That's good information. Now let's examine the actions for this repo - we are provided an [issue-notify.py](issue-notify.py) and an [issue-notify.yml](issue-notify.yml). At first glance at the python script, we see two interesting things:
+That's good information. Now let's examine the actions for this repo - we are provided an `issue-notify.py` and an `issue-notify.yml`. At first glance at the python script, we see two interesting things:
 
 1. The script checks `if 'very important' in title:` before executing an `os.system()` call
 2. The script runs our 'user input' (the body of the issue) in the call to `os.system()`.
@@ -39,7 +39,7 @@ os.system('echo ""; sleep 10; echo "" > /tmp/%s' % (body, notify_id))
 
 This will execute the `sleep 10` just fine. We have code execution now, we just need to find out what to do with it. The challenge name indicates the flag is likely stored in the environment variables so we know where to look, but how to extract this info from the server?
 
-To determine what tools are available for use, I looked to [issue-notify.yml](issue-notify.yml):
+To determine what tools are available for use, I looked to `issue-notify.yml`:
 
 ```yml
     runs-on: ubuntu-latest

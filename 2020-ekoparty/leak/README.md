@@ -4,7 +4,7 @@ EkoParty CTF 2020 Git 1
 
 ## Prompt
 
-Exact prompt has been forgotten. Linked to [this GitHub repo](ekolabs)
+Exact prompt has been forgotten. Linked to [this GitHub repo](ekolabs.tar.gz)
 
 ## Solution
 
