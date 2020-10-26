@@ -19,7 +19,7 @@ This challenge is where we really... umm... go down the rabbit hole, you could s
 - [[00:00]](https://youtu.be/_QgPMyRBBKM) : Many QR codes on the standby screen (challenge 1, "please stand by")
 - [[02:55]](https://youtu.be/_QgPMyRBBKM?t=175) : Creepy appearance behind the betty crocker advertisement.
 - [[04:51]](https://youtu.be/_QgPMyRBBKM?t=291) : Sneezing guy repeated a couple times in quick succession.
-- [[5:53]](https://youtu.be/_QgPMyRBBKM?t=353) : In the duck & cover / burt the turtle clip, there's a flag person in the bottom left that is sending text in the maritime flag signaling pattern.
+- [[05:53]](https://youtu.be/_QgPMyRBBKM?t=353) : In the duck & cover / burt the turtle clip, there's a flag person in the bottom left that is sending text in the maritime flag signaling pattern.
 - [[08:24]](https://youtu.be/_QgPMyRBBKM?t=504) : In the atomic bomb / duck & cover intro, when in Betty's school, a creepy plague doctor mask guy with numbers and letters, and a tune (challenge 2, "xclusive numborz")
 - [[14:06]](https://youtu.be/_QgPMyRBBKM?t=846) : When Tony is going to cubscouts / picnic - creepy guy overlay w anonymous-like mask on.
 - [[15:46]](https://youtu.be/_QgPMyRBBKM?t=946) : In the announcement about the Secret Squadron, `0x13A5C` is displayed, and a number is heard dialing in the background.

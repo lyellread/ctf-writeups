@@ -31,7 +31,7 @@ If we think about the regular format for QR codes, we would expect the "Position
 
 In [Gimp](https://www.gimp.org/), we can stitch these together, and we get the following:
 
-![Image](final-qr.png)
+![Image](final_qr.png)
 
 When scanned, that QR code becomes the text:
 
