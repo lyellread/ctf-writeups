@@ -3,7 +3,9 @@
 ### Prompt
 
 > Category: Over The Air
+
 > 297 Points
+
 > 5 Solves
 
 During one of the commercial breaks of my favorite state sponsored educational video, there was some interference once again. There was a woman wearing some sort of face mask and there were strange tones. The tones were familiar and rang a bell, but I couldn't quite put my finger on them. I don't know what these things mean, but maybe you can figure it out.
@@ -27,7 +29,7 @@ This challenge is where we really... umm... go down the rabbit hole, you could s
 
 So, we eliminated or decoded one thing at a time, ommitting the parts from previous challenges:
 
-- [[5:53]](https://youtu.be/_QgPMyRBBKM?t=353) : In the duck & cover / burt the turtle clip, there's a flag person in the bottom left that is sending text in the maritime flag signaling pattern.
+- [[05:53]](https://youtu.be/_QgPMyRBBKM?t=353) : In the duck & cover / burt the turtle clip, there's a flag person in the bottom left that is sending text in the maritime flag signaling pattern.
 
 The maritime / semaphore flag alphabet [is documented](http://www.anbg.gov.au/flags/semaphore.html), and I decoded the flag message to be two repetitions of:
 

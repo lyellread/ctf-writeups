@@ -3,7 +3,9 @@
 ### Prompt
 
 > Category: Over The Air
+
 > 290 Points
+
 > 8 Solves
 
 I was watching my regularly scheduled state sponsored programming when I got some strange interference. It sounded like a little girl was talking to me but I couldn't understand what she was saying. Can you figure it out? There's no space for mistakes, and no room for questions.
