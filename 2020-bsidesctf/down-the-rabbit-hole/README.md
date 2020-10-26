@@ -27,7 +27,7 @@ This challenge is where we really... umm... go down the rabbit hole, you could s
 - [[15:46]](https://youtu.be/_QgPMyRBBKM?t=946) : In the announcement about the Secret Squadron, `0x13A5C` is displayed, and a number is heard dialing in the background.
 - [[17:21]](https://youtu.be/_QgPMyRBBKM?t=1041) : Giant Behemoth: A message appears on the top of the screen.
 
-So, we eliminated or decoded one thing at a time, ommitting the parts from previous challenges:
+So, we eliminated or decoded one thing at a time, omitting the parts from previous challenges:
 
 - [[05:53]](https://youtu.be/_QgPMyRBBKM?t=353) : In the duck & cover / burt the turtle clip, there's a flag person in the bottom left that is sending text in the maritime flag signaling pattern.
 

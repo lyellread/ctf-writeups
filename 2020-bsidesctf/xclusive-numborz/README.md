@@ -46,7 +46,7 @@ Key    : 61 72 65 79 6f 75 6d 79 6d 6f
 (Ascii): a  r  e  y  o  u  m  y  m  o
 ```
 
-That key looks an aweful lot like "areyoumymommy", which is the key for the XOR decryption ("areyoumymommyareyoumymomm"...).
+That key looks an awful lot like "areyoumymommy", which is the key for the XOR decryption ("areyoumymommyareyoumymomm"...).
 
 ```
 BSidesPDX{th3_numb3rs_sp34k_4_th3ms3lv3s}
