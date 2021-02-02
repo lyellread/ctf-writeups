@@ -35,7 +35,7 @@ cipher1 = [base64.b64encode(str(ord(i) ^ 65).encode()) for i in secret]
 
 From a little deduction, we can guess that the creation of `cipher1` based on `secret` is how the list `cipher2` was developed. Therefore, to decipher that array, we simply need to reverse the list comprehension that generates `cipher1`.
 
-Working from the outside to the inside (to reverse the operations done during enciphering), we will need to first base64 decode each element. Then, we will have to cast it to an int (the output of `ord()`), and then use `chr()` to undo the `ord()` operation. Lastly we must undo the XOR with 65, whcih can be done by simply XORing it again. This can all be accomplished as so:
+Working from the outside to the inside (to reverse the operations done during enciphering), we will need to first base64 decode each element. Then, we will have to cast it to an int (the output of `ord()`), and then use `chr()` to undo the `ord()` operation. Lastly we must undo the XOR with 65, which can be done by simply XORing it again. This can all be accomplished as so:
 
 ```python
 print(''.join([chr(int(base64.b64decode(x)) ^ 65) for x in cipher2]))
@@ -51,7 +51,7 @@ From Wikipedia, we can see that a PDF file should start with `25 50 44 46 2d`, s
   25 50 44 46 2d -- PDF Magic Bytes
 ^ 64 11 05 07 6c -- Start of smashing.pdf
 ----------------
-= 41 41 41 41 41 -- key used to encrypy
+= 41 41 41 41 41 -- key used to encrypt
 ```
 
 I would not expect anything less. Therefore, we need to decrypt the whole PDF using this key, and for that, we can use a python script like this one:
