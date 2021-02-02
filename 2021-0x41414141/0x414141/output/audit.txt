@@ -1,0 +1,24 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Mon Jan 25 23:29:33 2021
+Invocation: foremost 
+Output directory: /home/lread/lread/other/ctf-writeups/2021-0x41414141/0x414141/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: stdin
+Start: Mon Jan 25 23:29:33 2021
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000359.zip 	      247 B 	     184292 	 
+1:	00000000.pdf 	     179 KB 	          0 	 
+
+2 FILES EXTRACTED
+	
+zip:= 1
+pdf:= 1
+------------------------------------------------------------------
+
+Foremost finished at Mon Jan 25 23:29:33 2021
