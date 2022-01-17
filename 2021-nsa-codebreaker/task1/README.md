@@ -8,8 +8,8 @@ You have been provided a capture of data en route to the listening post as well 
 
 Downloads:
 
-Network traffic heading to the LP ([capture.pcap])
-DIB IP address ranges ([ip_ranges.txt])
+Network traffic heading to the LP [capture.pcap](capture.pcap)
+DIB IP address ranges [ip_ranges.txt](ip_ranges.txt)
 
 Categories: Network Forensics, Command Line
 
@@ -17,7 +17,7 @@ Points: 25
 
 ## Solve
 
-Start by getting all the active IPs in the `.pcap` file.
+Start by getting all the active IPs in [capture.pcap](capture.pcap).
 
 ```sh
 $ tshark -r capture.pcap -q -z ip_hosts,tree
@@ -41,7 +41,7 @@ All Addresses     196                                                     0.0009
 ---------------------------------------------------------------------------------------------------------------------------------
 ```
 
-Next, we include these IP addresses in a script which will check each of the subnets for each of our IPs, to see which are in the DIB. This script ([insubnet.py]) is as follows:
+Next, we include these IP addresses in a script which will check each of the subnets for each of our IPs, to see which are in the DIB. This script ([insubnet.py](insubnet.py)) is as follows:
 
 ```python
 import ipaddress
@@ -83,4 +83,4 @@ When we run this, we see that it produces 4 IP addresses as output:
 192.168.99.33
 ```
 
-Those IPs are the IPs within the DIB which are compromised and talking with the LP. Further, we learn that the LP (the most common occurring IP address in this file) is at IP `10.61.181.46`.
+Those IPs are the IPs within the DIB which are compromised and talking with the LP. Further, we learn that the LP (the most common occurring IP address in [capture.pcap](capture.pcap)) is at IP `10.61.181.46`.
