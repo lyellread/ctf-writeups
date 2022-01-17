@@ -1,0 +1,47 @@
+Subject: New Guide
+From: demateo.jesus@oops.net
+To: oops_tech@oops.net
+Cc:
+Bcc:
+Date: Tue, 16 Mar 2021 04:13:02 +0000
+Message-ID: <161586798200.22130.15059927943601016767@oops.net>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============1664969339099870460=="
+
+--===============1664969339099870460==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Team,
+
+I committed a copy of the OOPS directory setup scripts to our repo.
+
+These copies we can modify, improve, or cannibalize to integrate into other
+scripts at will! :)
+
+Just a reminder! You will need the right certificates before these scripts
+will run.
+
+Respectfully,
+Jesus
+
+--===============1664969339099870460==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+	<p>Team,</p>
+
+	<p>I committed a copy of the <span class="caps">OOPS</span> directory setup scripts to our repo.</p>
+
+	<p>These copies we can modify, improve, or cannibalize to integrate into other<br />
+scripts at will! :)</p>
+
+	<p>Just a reminder! You will need the right certificates before these scripts<br />
+will run.</p>
+
+	<p>Respectfully,<br />
+Jesus</p>
+
+--===============1664969339099870460==--

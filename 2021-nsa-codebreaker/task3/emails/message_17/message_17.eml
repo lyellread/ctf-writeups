@@ -1,0 +1,50 @@
+Subject: Doctor's Appointment
+From: lembo.kelly@oops.net
+To: oops_tech@oops.net
+Cc:
+Bcc:
+Date: Tue, 16 Mar 2021 01:51:32 +0000
+Message-ID: <161585949200.22130.8543637396056276961@oops.net>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============7286833885867546475=="
+
+--===============7286833885867546475==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+
+All,
+
+I have a denist's appointment @ 8:30 am today --and will return after the appointment around 9:30am.
+
+Cheers,
+Kelly
+
+Cordially,
+Kelly J. Lembo
+OOPS Inc.
+2526 Tiffany Point
+Graybury, ID 21907
+Tel: 433-379-2595
+
+--===============7286833885867546475==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+	<p>All,</p>
+
+	<p>I have a denist&#8217;s appointment @ 8:30 am today &#8212;and will return after the appointment around 9:30am.</p>
+
+	<p>Cheers,<br />
+Kelly</p>
+
+	<p>Cordially,<br />
+Kelly J. Lembo<br />
+OOPS Inc.<br />
+2526 Tiffany Point<br />
+Graybury, ID 21907<br />
+Tel: 433-379-2595</p>
+
+--===============7286833885867546475==--

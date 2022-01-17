@@ -1,0 +1,59 @@
+Subject: Ticket Tracking Process
+From: ruiz.heather@oops.net
+To: oops_tech@oops.net
+Cc:
+Bcc:
+Date: Tue, 16 Mar 2021 10:22:48 +0000
+Message-ID: <161589016800.22130.6416347276101963623@oops.net>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============2682915963935113435=="
+
+--===============2682915963935113435==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+All,
+
+I have been messing around in OTT (OOPS Ticket Tracker) to get things
+structured in a way that makes it easier for me to track what everyone
+is working on. Here is the general format:
+
+- Each customer will have at most 2 epics. One titled "CUSTOMER v1.2.3"
+and one named "CUSTOMER Next Release"
+- The "CUSTOMER v1.2.3" epic will be created when we are prepared to release
+a new version. At that point, we can move all the tickets from the "Next Release"
+epic to the "v1.2.3" epic and know exactly what changed in that release.
+- There should be no other epics.
+- When we create new tickets, add them to the Next Release epic unless we know it's
+going in the upcoming release.
+- Everything we are doing that results in a code commit should have a ticket.
+
+Let me know if you have any thoughts / complaints/ concerns.
+Heather
+
+--===============2682915963935113435==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+	<p>All,</p>
+
+	<p>I have been messing around in <span class="caps">OTT</span> (<span class="caps">OOPS</span> Ticket Tracker) to get things<br />
+structured in a way that makes it easier for me to track what everyone<br />
+is working on. Here is the general format:</p>
+
+	<p>- Each customer will have at most 2 epics. One titled &#8220;<span class="caps">CUSTOMER</span> v1.2.3&#8220;<br />
+and one named &#8220;<span class="caps">CUSTOMER</span> Next Release&#8220;<br />
+- The &#8220;<span class="caps">CUSTOMER</span> v1.2.3&#8221; epic will be created when we are prepared to release<br />
+a new version. At that point, we can move all the tickets from the &#8220;Next Release&#8220;<br />
+epic to the &#8220;v1.2.3&#8221; epic and know exactly what changed in that release.<br />
+- There should be no other epics.<br />
+- When we create new tickets, add them to the Next Release epic unless we know it&#8217;s<br />
+going in the upcoming release.<br />
+- Everything we are doing that results in a code commit should have a ticket.</p>
+
+	<p>Let me know if you have any thoughts / complaints/ concerns.<br />
+Heather</p>
+
+--===============2682915963935113435==--
