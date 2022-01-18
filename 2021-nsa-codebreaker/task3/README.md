@@ -57,7 +57,7 @@ $dec = $(for ($i = 0; $i -lt $bytes.length; $i++) {
 iex([System.Text.Encoding]::UTF8.GetString($dec))
 ```
 
-This downloads a file named `pressure`, then proceeds to do a bytewise XOR on the file before executing it with `iex`. Very interesting simple obfuscation. To find out further what this does (and solve task 3), we must find that file, and decrypt it. The first step is to extract this file from [capture.pcap](capture.pcap) from task 1. We can do this in Wireshark, using "File > Export Objects > HTTP...". This menu allows us to retrieve the file [pressure](pressure). 
+This downloads a file named `pressure`, then proceeds to do a byte-wise XOR on the file before executing it with `iex`. Very interesting simple obfuscation. To find out further what this does (and solve task 3), we must find that file, and decrypt it. The first step is to extract this file from [capture.pcap](capture.pcap) from task 1. We can do this in Wireshark, using "File > Export Objects > HTTP...". This menu allows us to retrieve the file [pressure](pressure). 
 
 From there, we write a small python script to do the chained XOR and decrypt the file ([decode.py](decode.py))
 

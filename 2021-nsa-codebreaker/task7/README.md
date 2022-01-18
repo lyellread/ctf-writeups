@@ -18,7 +18,7 @@ Points: 500
 
 ## Solve
 
-And the reverse engineering continues. For task 7, we continue statically reversing the `make` binary to better understand it's function. Along the way we come upon a function which is called as follows:
+And the reverse engineering continues on the Ghidra project at [ghidra-project](../ghidra-project/). For task 7, we continue statically reversing the `make` binary to better understand it's function. Along the way we come upon a function which is called as follows:
 
 ```c
 socket = make_socket(lp_ip,lp_port);

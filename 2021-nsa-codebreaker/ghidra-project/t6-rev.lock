@@ -1,9 +1,0 @@
-#Ghidra Lock File
-#Mon Jan 17 17:12:58 PST 2022
-OS\ Name=Linux
-OS\ Version=5.4.0-91-generic
-Username=lread
-Hostname=darkstar
-<META>\ Supports\ File\ Channel\ Locking=Channel Lock
-OS\ Architecture=amd64
-Timestamp=1/17/22, 5\:12 PM

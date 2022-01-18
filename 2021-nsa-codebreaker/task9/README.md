@@ -55,3 +55,7 @@ result/contents(RUN: sha1sum /etc/passwd\n),
 ```
 
 Once arbitrary file read was achieved, the SSH private key to the `lpuser` account was printed, and SSH access was gained. From here, all that is required is listing the /tmp/endpoints/ directory to get access to all the UUIDs registered with the LP. This can even be done without an SSH key.
+
+### Stubbing
+
+The infrastructure sessions were few and far between. Combine that with camping and connections were practically impossible. Therefore, I also composed the quickest of stubs for `socket` in python which will reply with the proper values to keep execution going somewhat. This allows for offline testing of the script.
