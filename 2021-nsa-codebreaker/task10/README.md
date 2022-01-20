@@ -2,11 +2,11 @@
 
 ## Prompt
 
-NSA worked with FBI to notify all of the identified victims, who in turn notified DC3. Nicely done.
+> NSA worked with FBI to notify all of the identified victims, who in turn notified DC3. Nicely done.
 
-The final task is to uncover additional information about the actor's infrastructure.
+> The final task is to uncover additional information about the actor's infrastructure.
 
-Gain access to the LP. Provide the IP and port that the psuser account has transmitted data to. What lies behind the listening post?
+> Gain access to the LP. Provide the IP and port that the psuser account has transmitted data to. What lies behind the listening post?
 
 Categories: Protocol Analysis, Software Development, Exploit Development
 

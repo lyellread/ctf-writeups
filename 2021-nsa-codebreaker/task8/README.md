@@ -2,13 +2,13 @@
 
 ## Prompt
 
-Knowing the contents we'd send to initialize a new session is good progress. The next step is to uncover additional details about the protocol.
+> Knowing the contents we'd send to initialize a new session is good progress. The next step is to uncover additional details about the protocol.
 
-We suspect the Docker malware was specifically tailored to PANIC's image and written exclusively to steal their source code. Given that, it seems likely that the malware only contains a subset of the communications protocol supported by the LP. Our network capture does appear to have communications from other malware variants. If we could decrypt those communications, then we could analyze the underlying plaintext to recover additional details about the protocol.
+> We suspect the Docker malware was specifically tailored to PANIC's image and written exclusively to steal their source code. Given that, it seems likely that the malware only contains a subset of the communications protocol supported by the LP. Our network capture does appear to have communications from other malware variants. If we could decrypt those communications, then we could analyze the underlying plaintext to recover additional details about the protocol.
 
-As a reminder, our analysts believe the protocol includes an initial crypt negotiation followed by a series of client-generated requests, which the LP responds to.
+> As a reminder, our analysts believe the protocol includes an initial crypt negotiation followed by a series of client-generated requests, which the LP responds to.
 
-Decrypt the other sessions captured in the PCAP. Provide the UUIDs of each of the clients associated with the DIB that registered with the LP.
+> Decrypt the other sessions captured in the PCAP. Provide the UUIDs of each of the clients associated with the DIB that registered with the LP.
 
 Category: Cryptanalysis
 

@@ -2,7 +2,7 @@
 
 ## Prompt
 
-Now that we're able to register, let's send some commands! Use the knowledge and material from previous tasks to identify other clients that have registered with the LP.
+> Now that we're able to register, let's send some commands! Use the knowledge and material from previous tasks to identify other clients that have registered with the LP.
 
 Categories: Protocol Analysis, Software Development
 
